@@ -9,10 +9,12 @@ REFERENCES
     https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
 
 - Technical Code References
-    Python:
+    Python built-in:
+        numpy:                      <no use case yet>
         pickle:                     https://docs.python.org/3/library/pickle.html
-        numpy:                      https://numpy.org/
-        Matplotlib:                 https://matplotlib.org/stable/index.html
+        joblib:                     https://joblib.readthedocs.io/en/stable/
+        Matplotlib:                 https://matplotlib.org/stable/index.html <no use case yet>
 
     scikit-learn as model lib:      https://scikit-learn.org/stable/
+    pandas:                         https://pandas.pydata.org/docs/
     
