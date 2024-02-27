@@ -1,0 +1,18 @@
+REFERENCES
+- ABOUT Heart Disease
+    https://www.cdc.gov/heartdisease/about.htm#:~:text=What%20is%20heart%20disease%3F,can%20cause%20a%20heart%20attack.
+
+- Project Reference
+    https://github.com/Divyam6969/Heart-Disease-Prediction
+
+- Heart Disease dataset
+    https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
+
+- Technical Code References
+    Python:
+        pickle:                     https://docs.python.org/3/library/pickle.html
+        numpy:                      https://numpy.org/
+        Matplotlib:                 https://matplotlib.org/stable/index.html
+
+    scikit-learn as model lib:      https://scikit-learn.org/stable/
+    
