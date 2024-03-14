@@ -1,8 +1,13 @@
 class inference:
     def __init__(self):
         pass
+    # def inference_engine(self, chest_pain, blood_pressure, cholesterol,
+    #               blood_sugar, ECG, heart_rate, exercise,
+    #               old_peak, thallium, sex, age):
+    #     output = {'sick1': [], 'sick2': [], 'sick3': [], 'sick4': [], 'healthy': []}
+
     def inference_engine(self, chest_pain, blood_pressure, cholesterol,
-                  blood_sugar, ECG, heart_rate, exercise,
+                  blood_sugar, heart_rate, exercise,
                   old_peak, thallium, sex, age):
         output = {'sick1': [], 'sick2': [], 'sick3': [], 'sick4': [], 'healthy': []}
 
@@ -34,11 +39,11 @@ class inference:
         output['sick3'].append(cholesterol['high'])     # Rule 26
         output['sick4'].append(cholesterol['very_high'])    # Rule 27
         output['sick2'].append(blood_sugar['true'])     # Rule 28
-        output['healthy'].append(ECG['normal'])     # Rule 29
-        output['sick1'].append(ECG['normal'])      # Rule 30
-        output['sick2'].append(ECG['abnormal'])     # Rule 31
-        output['sick3'].append(ECG['hypertrophy'])  # Rule 32
-        output['sick4'].append(ECG['hypertrophy'])    # Rule 33
+        # output['healthy'].append(ECG['normal'])     # Rule 29
+        # output['sick1'].append(ECG['normal'])      # Rule 30
+        # output['sick2'].append(ECG['abnormal'])     # Rule 31
+        # output['sick3'].append(ECG['hypertrophy'])  # Rule 32
+        # output['sick4'].append(ECG['hypertrophy'])    # Rule 33
         output['healthy'].append(heart_rate['low'])     # Rule 34
         output['sick1'].append(heart_rate['medium'])    # Rule 35
         output['sick2'].append(heart_rate['medium'])    # Rule 36
