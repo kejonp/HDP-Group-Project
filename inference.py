@@ -7,8 +7,7 @@ class inference:
     #     output = {'sick1': [], 'sick2': [], 'sick3': [], 'sick4': [], 'healthy': []}
 
     def inference_engine(self, chest_pain, blood_pressure, cholesterol,
-                  blood_sugar, heart_rate, exercise,
-                  old_peak, thallium, sex, age):
+                  blood_sugar, ECG, heart_rate, thallium, sex, age):
         output = {'sick1': [], 'sick2': [], 'sick3': [], 'sick4': [], 'healthy': []}
 
         output['sick4'].append(min(age['very_old'], chest_pain['atypical_anginal']))   # Rule 1
@@ -39,22 +38,22 @@ class inference:
         output['sick3'].append(cholesterol['high'])     # Rule 26
         output['sick4'].append(cholesterol['very_high'])    # Rule 27
         output['sick2'].append(blood_sugar['true'])     # Rule 28
-        # output['healthy'].append(ECG['normal'])     # Rule 29
-        # output['sick1'].append(ECG['normal'])      # Rule 30
-        # output['sick2'].append(ECG['abnormal'])     # Rule 31
-        # output['sick3'].append(ECG['hypertrophy'])  # Rule 32
-        # output['sick4'].append(ECG['hypertrophy'])    # Rule 33
+        output['healthy'].append(ECG['normal'])     # Rule 29
+        output['sick1'].append(ECG['normal'])      # Rule 30
+        output['sick2'].append(ECG['abnormal'])     # Rule 31
+        output['sick3'].append(ECG['hypertrophy'])  # Rule 32
+        output['sick4'].append(ECG['hypertrophy'])    # Rule 33
         output['healthy'].append(heart_rate['low'])     # Rule 34
         output['sick1'].append(heart_rate['medium'])    # Rule 35
         output['sick2'].append(heart_rate['medium'])    # Rule 36
         output['sick3'].append(heart_rate['high'])      # Rule 37
         output['sick4'].append(heart_rate['high'])     # Rule 38
-        output['sick2'].append(exercise['true'])    # Rule 39
-        output['healthy'].append(old_peak['low'])   # Rule 40
-        output['sick1'].append(old_peak['low'])     # Rule 41
-        output['sick2'].append(old_peak['terrible'])      # Rule 42
-        output['sick3'].append(old_peak['terrible'])      # Rule 43
-        output['sick4'].append(old_peak['risk'])    # Rule 44
+        # output['sick2'].append(exercise['true'])    # Rule 39
+        # output['healthy'].append(old_peak['low'])   # Rule 40
+        # output['sick1'].append(old_peak['low'])     # Rule 41
+        # output['sick2'].append(old_peak['terrible'])      # Rule 42
+        # output['sick3'].append(old_peak['terrible'])      # Rule 43
+        # output['sick4'].append(old_peak['risk'])    # Rule 44
         output['healthy'].append(thallium['normal'])    # Rule 45
         output['sick1'].append(thallium['normal'])  # Rule 46
         output['sick2'].append(thallium['medium'])  # Rule 47
