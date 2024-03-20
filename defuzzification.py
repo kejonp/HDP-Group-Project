@@ -50,7 +50,7 @@ class defuzzification:
         #     result += 'sick4, '
             
         result = ''
-        if centerOfGravity < 1.78:
+        if 1.2 <= centerOfGravity < 1.78:
           result += 'Healthy, '
         if 1 <= centerOfGravity <= 2.51:
             result += 'Coronary Heart Disease, '
