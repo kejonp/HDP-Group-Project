@@ -47,3 +47,4 @@ class ProvideResult(object):
                                                          fuzzy_th, fuzzy_sex, fuzzy_age)
         defuzzified_result = defuzzifier.defuzzify(fuzzy_result)
         return defuzzified_result
+#
