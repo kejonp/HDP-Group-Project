@@ -27,7 +27,8 @@ class ProvideResult(object):
     def get_final_result(input_dict: dict) -> str:
         print(input_dict.keys())
         fuzzy_cp = cp_fuzzification.fuzzify_chest_pain(int(input_dict['chest_pain']))
-        fuzzy_bp = bp_fuzzification.fuzzify_blood_pressure(int(input_dict['blood_pressure']))
+        fuzzy_bp = bp_fuzzification.fuzzify_blood_pressure(int(input_dict['systolic']), int(input_dict['diastolic']))
+        # fuzzy_bp = bp_fuzzification.fuzzify_blood_pressure(int(input_dict['blood_pressure']))
         fuzzy_ch = ch_fuzzification.fuzzify_cholesterol(int(input_dict['cholestrol']))
         fuzzy_bs = bs_fuzzification.fuzzify_blood_sugar(int(input_dict['blood_sugar']))
         fuzzy_ECG = ECG_fuzzification.fuzzify_ECG(float(input_dict['ecg']))
@@ -37,6 +38,7 @@ class ProvideResult(object):
         fuzzy_th = th_fuzzification.fuzzify_thallium(int(input_dict['thallium_scan']))
         fuzzy_sex = sex_fuzzification.fuzzify_sex(int(input_dict['sex']))
         fuzzy_age = age_fuzzification.fuzzify_age(int(input_dict['age']))
+        
         # fuzzy_result = inference_engine.inference_engine(fuzzy_cp, fuzzy_bp, fuzzy_ch,
         #                                                  fuzzy_bs, fuzzy_ECG, fuzzy_hr,
         #                                                  fuzzy_ex, fuzzy_op, fuzzy_th,
