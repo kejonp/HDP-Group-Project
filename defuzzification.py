@@ -8,9 +8,9 @@ class defuzzification:
         pass
 
     def defuzzify(self, x):
-        numberOfPoints = 1000
-        delta = 5. / numberOfPoints
-        points = [i * delta for i in range(numberOfPoints + 1)]
+        valRange = 1000
+        delta = 5. / valRange
+        points = [i * delta for i in range(valRange + 1)]
         numerator = 0.
         denominator = 0.
         for point in points:
@@ -37,22 +37,11 @@ class defuzzification:
             centerOfGravity = numerator / denominator
         except ZeroDivisionError:
             centerOfGravity = 0
-        # result = ''
-        # if centerOfGravity < 1.78:
-        #   result += 'healthy, '
-        # if 1 <= centerOfGravity <= 2.51:
-        #     result += 'sick1, '
-        # if 1.78 <= centerOfGravity < 3.25:
-        #     result += 'sick2, '
-        # if 1.5 <= centerOfGravity <= 4.5:
-        #     result += 'sick3, '
-        # if 3.25 <= centerOfGravity:
-        #     result += 'sick4, '
-            
+
         result = ''
         if centerOfGravity < 1.78:
           result += 'Healthy, '
-        if 1 <= centerOfGravity <= 2.51:
+        if 1.29 <= centerOfGravity <= 2.51:
             result += 'Coronary Heart Disease, '
         if 1.78 <= centerOfGravity < 3.25:
             result += 'Stroke, '
@@ -61,4 +50,4 @@ class defuzzification:
         if 3.25 <= centerOfGravity:
             result += 'Aortic Disease, '
         # return str(result) + str(centerOfGravity)
-        return str(result)
+        return str(result) 

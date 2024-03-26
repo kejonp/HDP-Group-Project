@@ -34,52 +34,97 @@ class chest_pain_fuzzification:
             asymptomatic=self.asymptomatic(cp)
         )
 
+# systolic only kata cindy
+# class blood_pressure_fuzzification:
+#     def __init__(self):
+#         pass
 
+#     def blood_pressure_low(self, x):
+#         if 0 <= x <= 111:
+#             return 1.0
+#         elif 111 < x <= 134:
+#             return (-1.0 / 23) * x + 134 / 23.0
+#         else:
+#             return 0.0
+
+#     def blood_pressure_medium(self, x):
+
+#         if 127 <= x <= 139:
+#             return (1.0 / 12) * x - 127 / 12.0
+#         elif 139 < x <= 153:
+#             return (-1.0 / 14) * x + 153 / 14.0
+#         else:
+#             return 0.0
+
+#     def blood_pressure_high(self, x):
+
+#         if 142 <= x <= 157:
+#             return (1.0 / 15) * x - 142 / 15.0
+#         elif 157 < x <= 172:
+#             return (-1.0 / 15) * x + 172 / 15.0
+#         else:
+#             return 0.0
+
+#     def blood_pressure_very_high(self, x):
+
+#         if 0 <= x <= 154:
+#             return 0.0
+#         elif 154 < x <= 171:
+#             return (1.0 / 17) * x - 154 / 17.0
+#         else:
+#             return 1.0
+
+#     def fuzzify_blood_pressure(self, bp):
+#         return dict(
+#             low=self.blood_pressure_low(bp),
+#             medium=self.blood_pressure_medium(bp),
+#             high=self.blood_pressure_high(bp),
+#             very_high=self.blood_pressure_very_high(bp)
+#         )
+
+## Updated with diastolic value as y   
 class blood_pressure_fuzzification:
     def __init__(self):
         pass
 
-    def blood_pressure_low(self, x):
-        if 0 <= x <= 111:
+    def blood_pressure_low(self, x, y):
+        if 0 <= x <= 111 and 0 <= y <= 80:
             return 1.0
-        elif 111 < x <= 134:
-            return (-1.0 / 23) * x + 134 / 23.0
+        elif 111 < x <= 134 and 80 < y <= 89:
+            return min((-1.0 / 23) * x + 134 / 23.0, (-1.0 / 9) * y + 89 / 9.0)
         else:
             return 0.0
 
-    def blood_pressure_medium(self, x):
-
-        if 127 <= x <= 139:
-            return (1.0 / 12) * x - 127 / 12.0
-        elif 139 < x <= 153:
-            return (-1.0 / 14) * x + 153 / 14.0
+    def blood_pressure_medium(self, x, y):
+        if 127 <= x <= 139 and 80 <= y <= 89:
+            return min((1.0 / 12) * x - 127 / 12.0, (-1.0 / 9) * y + 89 / 9.0)
+        elif 139 < x <= 153 and 89 < y <= 99:
+            return min((-1.0 / 14) * x + 153 / 14.0, (-1.0 / 10) * y + 99 / 10.0)
         else:
             return 0.0
 
-    def blood_pressure_high(self, x):
-
-        if 142 <= x <= 157:
-            return (1.0 / 15) * x - 142 / 15.0
-        elif 157 < x <= 172:
-            return (-1.0 / 15) * x + 172 / 15.0
+    def blood_pressure_high(self, x, y):
+        if 142 <= x <= 157 and 89 <= y <= 99:
+            return min((1.0 / 15) * x - 142 / 15.0, (-1.0 / 10) * y + 99 / 10.0)
+        elif 157 < x <= 172 and 99 < y <= 110:
+            return min((-1.0 / 15) * x + 172 / 15.0, (-1.0 / 11) * y + 110 / 11.0)
         else:
             return 0.0
 
-    def blood_pressure_very_high(self, x):
-
-        if 0 <= x <= 154:
+    def blood_pressure_very_high(self, x, y):
+        if 0 <= x <= 154 and 0 <= y <= 110:
             return 0.0
-        elif 154 < x <= 171:
-            return (1.0 / 17) * x - 154 / 17.0
+        elif 154 < x <= 171 and 0 < y <= 110:
+            return min((1.0 / 17) * x - 154 / 17.0, (-1.0 / 11) * y + 110 / 11.0)
         else:
             return 1.0
 
-    def fuzzify_blood_pressure(self, bp):
+    def fuzzify_blood_pressure(self, systolic_bp, diastolic_bp):
         return dict(
-            low=self.blood_pressure_low(bp),
-            medium=self.blood_pressure_medium(bp),
-            high=self.blood_pressure_high(bp),
-            very_high=self.blood_pressure_very_high(bp)
+            low=self.blood_pressure_low(systolic_bp, diastolic_bp),
+            medium=self.blood_pressure_medium(systolic_bp, diastolic_bp),
+            high=self.blood_pressure_high(systolic_bp, diastolic_bp),
+            very_high=self.blood_pressure_very_high(systolic_bp, diastolic_bp)
         )
 
 

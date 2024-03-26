@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+.hidden{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f7e7df;
+    font-weight: 700;
+}
+
+nav{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #c2956b;
+}
+
+.link a:hover, a:active{
+    border-bottom: 2px;
+}
+
+.link a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.link a:hover::after{
+    width: 70%;
+}
+
+.button {
+    background-color: #d6b598;
+    border: 2px solid #d6b598;
+	border-radius: 50px;
+	box-shadow: none;
+	width: 9rem; /* adjust as required */
+	height: 3rem; /* adjust as required */
+	cursor: pointer;
+    font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.button:hover {
+    background: hsl(28.064516129032267deg 43.05555555555557% 81.76470588235294%);
+    border: 2px solid hsl(28.064516129032267deg 43.05555555555557% 81.76470588235294%);
+	border-radius: 50px;
+	box-shadow: 0px 3px 10px hsl(28.064516129032267deg 43.05555555555557% 45% / 0.5);
+	transform: translateY(-1px)
+}
+
+.button:disabled {
+    background-color: hsl(28.064516129032267deg 15% 71.76470588235294%);
+	border-radius: 50px;
+    color: white
+}
+
+.container{
+    padding-left: 6rem;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #e4c7a6;
+    z-index: -100;
+}
+
+header{
+    position: relative;
+    justify-content: baseline;
+}
+
+header .content h1{
+    margin-bottom: 1rem;
+    color: #e3a689;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 4rem;
+}
+
+header .content h2{
+    color: #dfb29e;
+    opacity: 40%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+header .content p{
+    margin-bottom: 2rem;
+    color: #b48d7a;
+}
+
+@media (width < 300px){
+    .nav-links{
+        display: none;
+    }
+    header{
+        grid-template-columns: repeat(1, 1fr);
+    } 
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); 
+
+font-face {
+    font-family: customFont;
+    src: url('../font/Sansation-Light.ttf');
+  }
+  
+  body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      width: 100%;
+      min-height: 100vh;
+      /* background-image: url('../image/health_care.jpg'); */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-color: #f7e7df;
+      color: #c2956b;
+      font-weight: 700;
+  }
+  
+  body::-webkit-scrollbar {
+      display: none;
+  }
+
+  .blur{
+    position: absolute;
+    box-shadow: 0 0 2000px 30px #e4c7a6;
+    z-index: -100;
+    padding: 100px;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+        Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+      } 
+
+      .result {
+        font-size: 30px;
+        color: white;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+        }
