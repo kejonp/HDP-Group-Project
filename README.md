@@ -1,12 +1,12 @@
-This project is an implementation of a heart disease diagnosis system using fuzzy expert system
-# Inputs of the problem
+This project is an implementation of a heart disease prediction system using fuzzy system
+# Inputs for diagnosis
 
 ### Chest pain
-- This entry specifies the degree of chest pain. This input is crisp value, and It has only four values of 1, 2, 3, or 4, and if its value is one, it indicates "typical angina." If its value is 2, it shows "atypical angina." if the value is 3, it indicates "non-anginal pain," and if the value is 4, It means "asymptomatic."
+- This entry specifies the degree of chest pain. This input is crisp value, and It has only four values of 1, 2, 3, or 4, those indicates "typical angina." "atypical angina." "non-anginal pain," and "asymptomatic." chest pains respectively.
 
 It means "asymptomatic".
 ### Blood pressure
-- This input value specifies the blood pressure of the person.
+- This input value specifies the blood pressure of the person. The inputs take the form of systolic and diastolic value
 ### Cholesterol
 - This input value specifies the level of cholesterol of the person.
 ### Blood sugar
@@ -16,13 +16,8 @@ It means "asymptomatic".
 left ventricular hypertrophy and bundle branch blocks.
 ### Maximum heart rate
 - This input shows the maximum heart rate of a person during 24 ours.
-### Sports activity 
-- This input is a crisp input and has only two values: zero or one. If it is zero, that means
-Sports activity is not suitable for a person, and if it is one, it means that sports activity is allowed for the person.
-### Peak Old
-- This input value specifies the level of depression of the person.
 ### The amount of thallium
-- This input specifies the amount of thallium (a chemical element) in a person's body. This input is  also
+- This input specifies the amount of thalliumin a person's body. This input is
 a crisp value and it can be only three values: 3, 6, and 7. If the amount of thallium is three, it is "normal", if it six
 then the amount of thalliym is "Average" and if it is 7, thallium is "high".
 ### Gender
