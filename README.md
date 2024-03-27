@@ -20,17 +20,11 @@ It means "asymptomatic".
 - This input value specifies the level of cholesterol of the person.
 ### Blood sugar
 - This input value specifies the blood sugar level of the person.
-### ECG
-- It is a non-invasive test that can detect abnormalities such as arrhythmia, evidences of coronary artery disease,
-left ventricular hypertrophy and bundle branch blocks.
+### Exercise
+- If it is zero, it means the patient never exercises or rarely exercise (> once per three months). If it is one, it means that the patient exercises often or occasionally exercises.
 ### Maximum heart rate
 - This input shows the maximum heart rate of a person during 24 ours.
-### The amount of thallium
-- This input specifies the amount of thalliumin a person's body. This input is
-a crisp value and it can be only three values: 3, 6, and 7. If the amount of thallium is three, it is "normal", if it six
-then the amount of thalliym is "Average" and if it is 7, thallium is "high".
 ### Gender
-- This input is also a crisp input and has only two values: zero and one. If it is zero, it means the patient is 
-a man, and if it is one, it means that the patient is a woman.
+- If it is zero, it means the patient is a man, and if it is one, it means that the patient is a woman.
 ### Age
 - This entry specifies the age of the person
