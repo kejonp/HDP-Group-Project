@@ -53,25 +53,25 @@
                 <button class="nextButton" onclick="nextQuestion()">Next</button>
             </div>
 
-            <div class="question-container" id="question6">
-                <h2 id="question">What were your most recent readings of your blood pressure?</h2>
-                Systolic <input type="number" id="blood_pressure_systolic" name="blood_pressure_systolic" min="50" max="400" value="0" oninput="blood_pressure_systolic_value.value = this.value">mm Hg
-                <br>
-                Diastolic <input type="number" id="blood_pressure_diastolic" name="blood_pressure_diastolic" min="50" max="200" value="0" oninput="blood_pressure_diastolic_value.value = this.value">mm Hg
-                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
-                <button class="nextButton" onclick="nextQuestion()">Next</button>
-            </div>
-
+            
             <div class="question-container" id="question7">
                 <h2 id="question">What were your most recent readings of your blood sugar?</h2>
                 <input type="number" id="blood_sugar" name="blood_sugar" min="0" max="200" value="0" oninput="blood_sugar_value.value = this.value">
                 <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
                 <button class="nextButton" onclick="nextQuestion()">Next</button>
             </div>
-
-            <div class="question-container" id="question8">
+            
+            <div class="question-container" id="question6">
                 <h2 id="question">What is your average resting heart rate?</h2>
                 <input type="number" id="heart_rate" name="heart_rate" min="0" max="200" value="0" oninput="heart_rate_value.value = this.value"> bpm
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+            <div class="question-container" id="question8">
+                <h2 id="question">What were your most recent readings of your blood pressure?</h2>
+                Systolic <input type="number" id="systolic" name="systolic" min="50" max="400" value="0" oninput="systolic_value.value = this.value">mm Hg
+                <br>
+                Diastolic <input type="number" id="diastolic" name="diastolic" min="50" max="200" value="0" oninput="diastolic_value.value = this.value">mm Hg
                 <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
                 <button type="submit" id="submitButton" style="display: none;" value="Show Result">Submit</button>
             </div>

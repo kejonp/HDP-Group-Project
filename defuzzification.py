@@ -50,4 +50,4 @@ class defuzzification:
         if 3.25 <= centerOfGravity:
             result += 'Aortic Disease, '
         # return str(result) + str(centerOfGravity)
-        return str(result) + str(centerOfGravity)
+        return str(result) 
