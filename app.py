@@ -3,11 +3,13 @@ from final_result import ProvideResult
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def main_page():
+def home():
     return render_template('home.html')
 
+@app.route('/test')
+def test():
+    return render_template('index.html')
 
 @app.route('/result', methods=['GET', 'POST'])
 def final_result():
