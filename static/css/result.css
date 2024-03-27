@@ -1,0 +1,20 @@
+@font-face {
+    font-family: customFont;
+    src: url('../font/Sansation-Light.ttf');
+  }
+  
+  body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      width: 100%;
+      min-height: 100vh;
+      background-image: url('../image/health_care.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      font-family: customFont;
+  }
+  
+  body::-webkit-scrollbar {
+      display: none;
+  }

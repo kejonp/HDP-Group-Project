@@ -1,106 +1,260 @@
-@font-face {
-  font-family: customFont;
-  src: url('../font/Sansation-Light.ttf');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+  Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
-body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-	width: 100%;
-	min-height: 100vh;
-	background-image: url('../image/health_care.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	font-family: customFont;
+body{
+  font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #f7e7df;
+  font-weight: 700;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+.blur{
+  position: absolute;
+  box-shadow: 0 0 2000px 30px #e4c7a6;
+  z-index: -100;
+  padding: 100px;
 }
 
-form {
+.app{
+  background: #ffff;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
 }
 
-.form-container {
-    display: flex;
-	flex-direction: row;
+.app h1{
+  font-size: 25px;
+  color: #c2956b;
+  font-weight: 600;
+  border-bottom: 1px solid #c2956b;
+  padding-bottom: 10px;
 }
 
-.container {
-    flex: 1 1 50%;
-    margin: 50px;
+.question-container{
+  font-size: 18px;
+  color: #c2956b;
+  font-weight: 600;
 }
 
+button{
+  background-color: #ffff;
+  color: #c2956b;
+  font-weight: bold;
+  width: 150px;
+  border: 2px solid #c2956b;
+  padding: 10px;
+  margin: 20px 0 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sex-button:active{
+  background-color: #c2956b;
+}
+
+.nextButton1{
+  display: block;
+}
+
+.previousButton {
+  display: block;
+}
+
+button:hover{
+  background: #c2956b;
+  color: #fff;
+}
+
+.question-container{
+  display: none;
+}
+
+.maleButton:focus{
+  background-color: #c2956b;
+}
+
+#health_form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style for form steps */
+.step {
+  display: none;
+}
+
+/* Style for active step */
+.step.active {
+  display: block;
+}
+
+/* Style for labels */
 label {
-    color: white;
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
-    min-width: 120px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-input {
-    border-radius: 10px;
-    width: 200px;
-    height: 30px;
-    padding: 0px 10px;
-    font-size: 20px;
-    border: 1px solid black;
+/* Style for input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
 }
 
-*:focus {
-    outline: none;
+input[type="range"] {
+  /* To remove default styles appplied by webkit browsers */
+  -webkit-appearance: none;
+  width: 15em;
+  background: transparent;
+  position: relative;
+}   
+
+input[type="range"]:focus {
+  outline: 0;
 }
 
-.holder {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    flex: 1 1 50%;
+/* SLIDER THUMB -> represented by the orange ball in the design */
+/* Webkit based browsers (chrome, opera, ...) */
+input[type="range"]::-webkit-slider-thumb {
+   /* Removes the default styling */
+  -webkit-appearance: none;
+
+  width: 2em;
+  height: 2em;
+  margin: .5em 0;
+  background: hsl(27, 60%, 78%);
+  border-radius: 100%;
+
+  /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
+  box-shadow: 
+              inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
+              inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
+              0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);;
+
+  cursor: pointer;
 }
 
-output {
-    color: white;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    min-width: 120px;
+/*All the same stuff for firefox */
+input[type=range]::-moz-range-thumb {
+  width: 3em;
+  height: 3em;
+  margin: .5em 0;
+  background: #c2956b;
+  border-radius: 100%;
+  box-shadow: 
+              inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
+              inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
+              0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);
+  cursor: pointer;
+  border: 0;
 }
 
-.button-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+
+/* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
+/* Webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+  width: 100%;
+  height: 3em;
+  padding: 0 1em;
+  border-radius: 2em;
+
+  /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */ 
+  box-shadow: 
+              inset .6em 1em 10px rgba(0,0,0,.15),
+              inset -.6em -1em 10px rgba(255, 255, 255, .415);
+}
+/* For firefox */
+input[type=range]::-moz-range-track {
+  background: transparent;
+  width: 100%;
+  height: 4em;
+  padding: 0 1em;
+  border-radius: 2em;
+  box-shadow: 
+              inset .6em 1em 10px rgba(0,0,0,.15),
+              inset -.6em -1em 10px rgba(255, 255, 255, .415);
 }
 
-.submit_button {
+/* For the numbering in the range's design - doesn't show on firefox but shows on chrome and opera */
+input[type="range"]::before {
+  content: "0 1 2 3 4";
+  position: absolute;
+  text-align: center;
+  color: #c4c4c4;
+  font-size: 1em;
 
+  /*Serves to spread the letters to fit the whole width of the track */
+  letter-spacing: .65em;
+
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  padding: 1.6em;
+
+  /* Makes the letters look embossed adding to the skeumorphic theme of the design */
+  text-shadow: .5px .5px 0.9px rgba(0,0,0, .4);
+
+  z-index: -1;
 }
 
-.result {
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%)
+input[type="number"]{
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+  Geneva, Verdana, sans-serif;
 }
 
-@media only screen and (max-width: 1080px) {
-  .form-container {
-    flex-direction: column !important;
-  }
-  .container {
-    margin: 0px 50px;
-  }
-  .top-container {
-    margin-top: 50px;
-  }
-  .button-container {
-    padding-bottom: 50px;
-  }
+input[type="radio"]{
+  
+}
+
+
+.question-container label{
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: 2px solid #c2956b;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.question-container label:hover{
+  background-color: #c2956b;
+  color: #fff;
+}
+
+.question-container label:active{
+  background-color: #c2956b;
+}
+
+.question-container h2{
+  margin-top: 15px;
+}
+
+#question2 h2{
+  margin-bottom: 25px;
+}
+
+#question3 h2{
+  margin-bottom: 20px;
 }
