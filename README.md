@@ -1,4 +1,13 @@
-This project is an implementation of a heart disease prediction system using fuzzy system
+This group project is an implementation of a heart disease prediction system using fuzzy system.
+
+
+# How to run the project
+- To install the requirements and used libraries, first enter the main directory and then install the requirements using the pip install -r requirements.txt command. Then easily run app.py ( it's on port 8448. do not change it)
+```
+pip install -r requirements.txt
+python3 app.py
+
+```
 # Inputs for diagnosis
 
 ### Chest pain
@@ -25,12 +34,3 @@ then the amount of thalliym is "Average" and if it is 7, thallium is "high".
 a man, and if it is one, it means that the patient is a woman.
 ### Age
 - This entry specifies the age of the person
-
-# How to run the project
-- To install the requirements and used libraries, first enter the main directory and then install the requirements using the pip install -r requirements.txt command. Then easily run app.py ( it's on port 8448. do not change it)
-
-```
-pip install -r requirements.txt
-python3 app.py
-
-```
