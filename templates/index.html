@@ -7,75 +7,112 @@
 </head>
 <body>
     <form action="/result" method="post">
-        <div class="form-container">
-            <div class="container top-container">
-                <div class="holder">
-                    <label for="chest_pain">Chest Pain</label>
-                    <input type="range" id="chest_pain" name="chest_pain" min="1" max="4" value="1" oninput="chest_pain_value.value = this.value">
-                    <output id="chest_pain_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="cholestrol">Cholestrol</label>
-                    <input type="range" id="cholestrol" name="cholestrol" min="0" max="600" value="0" oninput="cholestrol_value.value = this.value">
-                    <output id="cholestrol_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="ecg">ECG</label>
-                    <input type="range" id="ecg" name="ecg" min="-0.5" max="2.5" step="0.1" value="0" oninput="ecg_value.value = this.value">
-                    <output id="ecg_value">0</output>
-                </div>
-                <!-- <div class="holder">
-                    <label for="exercise">Exercise</label>
-                    <input type="range" id="exercise" name="exercise" min="0" max="1" value="0" oninput="exercise_value.value = this.value">
-                    <output id="exercise_value">0</output>
-                </div> -->
-                <div class="holder">
-                    <label for="thallium_scan">Thallium Scan</label>
-                    <input type="range" id="thallium_scan" name="thallium_scan" min="3" max="7" value="3" oninput="thallium_scan_value.value = this.value">
-                    <output id="thallium_scan_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="age">Age</label>
-                    <input type="range" id="age" name="age" min="0" max="100" value="0" oninput="age_value.value = this.value">
-                    <output id="age_value">0</output>
-                </div>
+        <div class="app">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h1>Health Care Related Questions</h1>
+            <div class="question-container" id="question1">
+                <h2>What is your sex?</h2>
+                <input type="radio" id="sex_male" name="sex" value="0">
+                <label for="sex_male" id="male-label" class="sex-label" style="cursor: pointer" onclick="sex('male')">Male</label>
+                <input type="radio" id="sex_female" name="sex" value="1">
+                <label for="sex_female" id="female-label" class="sex-label" style="cursor: pointer" onclick="sex('female')">Female</label>
+            
+                <button class="nextButton1" type="button" onclick="nextQuestion()">Next</button>
             </div>
-            <div class="container">
-                <div class="holder">
-                    <label for="systolic">Systolic value</label>
-                    <input type="range" id="systolic" name="systolic" min="0" max="350" value="0" oninput="systolic_value.value = this.value">
-                    <output id="systolic_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="diastolic">Diastolic value</label>
-                    <input type="range" id="diastolic" name="diastolic" min="0" max="350" value="0" oninput="diastolic_value.value = this.value">
-                    <output id="diastolic_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="blood_sugar">Blood Sugar</label>
-                    <input type="range" id="blood_sugar" name="blood_sugar" min="0" max="200" value="0" oninput="blood_sugar_value.value = this.value">
-                    <output id="blood_sugar_value">0</output>
-                </div>
-                <div class="holder">
-                    <label for="heart_rate">Heart Rate</label>
-                    <input type="range" id="heart_rate" name="heart_rate" min="0" max="600" value="0" oninput="heart_rate_value.value = this.value">
-                    <output id="heart_rate_value">0</output>
-                </div>
-                <!-- <div class="holder">
-                    <label for="old_peak">Old Peak</label>
-                    <input type="range" id="old_peak" name="old_peak" min="0" max="10" step="0.1" value="0" oninput="old_peak_value.value = this.value">
-                    <output id="old_peak_value">0</output>
-                </div> -->
-                <div class="holder">
-                    <label for="sex">Sex</label>
-                    <input type="range" id="sex" name="sex" min="0" max="1" value="0" oninput="sex_value.value = this.value">
-                    <output id="sex_value">0</output>
-                </div>
+
+            <div class="question-container" id="question2">
+                <h2>On a scale of 1 to 4, how much does your chest hurt?</h2>
+                <input type="range" id="chest_pain" name="chest_pain" min="1" max="4" value="1" oninput="chest_pain_value.value = this.value">
+                <output id="chest_pain_value">1</output>
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="questionButton" onclick="nextQuestion()">Next</button>
             </div>
-        </div>
-        <div class="button-container">
-            <input class="submit_button" type="submit" value="Show Result">
+
+            <div class="question-container" id="question3">
+                <h2 id="question">What were your recent cholesterol test results?</h2>
+                <input type="number" id="cholesterol" name="cholesterol" min="0" max="600" value="0" oninput="cholesterol_value.value = this.value">
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+
+            <div class="question-container" id="question4">
+                <h2 id="question">Do you casually exercise?</h2>
+                <input type="radio" id="exercise_no" name="exercise" value="0">
+                <label for="exercise_no" id="no-label" class="exercise-label" style="cursor: pointer" onclick="exercise('no')">No</label>
+                <input type="radio" id="exercise_yes" name="exercise" value="1">
+                <label for="exercise_yes" id="yes-label" class="exercise-label" style="cursor: pointer" onclick="exercise('yes')">Yes</label>
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+
+            <div class="question-container" id="question5">
+                <h2 id="age">What is your age?</h2>
+                <input type="number" id="age" name="age" value="1" min="1" max="100" oninput="age_value.value = this.value">
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+
+            <div class="question-container" id="question6">
+                <h2 id="question">What were your most recent readings of your blood pressure?</h2>
+                Systolic <input type="number" id="blood_pressure_systolic" name="blood_pressure_systolic" min="50" max="400" value="0" oninput="blood_pressure_systolic_value.value = this.value">mm Hg
+                <br>
+                Diastolic <input type="number" id="blood_pressure_diastolic" name="blood_pressure_diastolic" min="50" max="200" value="0" oninput="blood_pressure_diastolic_value.value = this.value">mm Hg
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+
+            <div class="question-container" id="question7">
+                <h2 id="question">What were your most recent readings of your blood sugar?</h2>
+                <input type="number" id="blood_sugar" name="blood_sugar" min="0" max="200" value="0" oninput="blood_sugar_value.value = this.value">
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button class="nextButton" onclick="nextQuestion()">Next</button>
+            </div>
+
+            <div class="question-container" id="question8">
+                <h2 id="question">What is your average resting heart rate?</h2>
+                <input type="number" id="heart_rate" name="heart_rate" min="0" max="200" value="0" oninput="heart_rate_value.value = this.value"> bpm
+                <button class="previousButton" type="button" onclick="previousQuestion()">Previous</button>
+                <button type="submit" id="submitButton" style="display: none;" value="Show Result">Submit</button>
+            </div>
         </div>
     </form>
 </body>
+<script>
+    let currentQuestion = 1;
+    document.getElementById('question' + currentQuestion).style.display = 'block';
+
+    function showSubmitButton(){
+        var questions = document.querySelectorAll('.question-container');
+        var lastQuestion = questions[questions.length - 1];
+        var submitButton = document.getElementById('submitButton');
+
+        if(lastQuestion.style.display !== 'none'){
+            submitButton.style.display = 'block';
+        } else{
+            submitButton.style.display = 'none';
+        }
+    }
+
+    function nextQuestion() {
+        document.getElementById('question' + currentQuestion).style.display = 'none';
+        currentQuestion++;
+        if (document.getElementById('question' + currentQuestion)) {
+            document.getElementById('question' + currentQuestion).style.display = 'block';
+        } else {
+            document.getElementById('submitButton').style.display = 'block';
+        }
+        showSubmitButton();
+    }
+
+    function previousQuestion(){
+        if(currentQuestion > 1){
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+            currentQuestion--;
+            document.getElementById('question' + currentQuestion).style.display = 'block';
+            showSubmitButton
+        }
+    }
+
+</script>
 </html>
