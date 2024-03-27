@@ -1,3 +1,20 @@
+<!--Copyright 2024 Group 2 AI Course MIE212401 Final Project
+
+    Licensed by Jules
+    you may not use this file for public use except in compliance with the license.
+    you may obtain a copy of the license at
+
+    julianrafi@gmail.com
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<!-- Author: Cindy Prilia (cindyprilia04@gmail.com)-->
+
 <!DOCTYPE html>
 <html lang="en">
     <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
@@ -11,7 +28,7 @@
     <nav>
         <ul class="nav-links">
             <li id="home-link" class="link"><a href="#">Home</a></li>
-            <li id="link1" class="link"><a href="#">About</a></li>
+            <li id="link1" class="link"><a href="/about">About</a></li>
             <!-- <li id="link2" class="link"><a href="{{url_for('static', filename='html/index.html')}}">Test</a></li> -->
             <li id="link2" class="link"><a href="/test">Test</a></li>
         </ul>
@@ -24,16 +41,9 @@
             <h1>Empowering Hearts, Predicting Futures: AI-driven Insights for Heart Health</h1>
             <h2>A site made for Artificial Intelligence course</h2>
             <p>Take a test to know your heart conditions!</p>
-            <button class="button" href="index.html">Take a Test</button>
+            <a class="testButton" href="/test">Take a Test</a>
         </div>
     </header>
-
-    <section id="about" class="hidden">
-        <h1>About Us</h1>
-        <p>Our test is made for people who wanted to know
-            about their heart conditions. Heart disease is 
-        </p>
-    </section>
 
 </body>
 </html>

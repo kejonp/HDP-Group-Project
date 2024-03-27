@@ -8,6 +8,3 @@ def predict():
     # Get user inputs from the form
     features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 
                 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
-    
-
-# fokus bikin ppt dlu brokkk

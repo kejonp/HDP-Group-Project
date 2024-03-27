@@ -11,6 +11,10 @@ def home():
 def test():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/result', methods=['GET', 'POST'])
 def final_result():
     input_dict = request.form.to_dict()

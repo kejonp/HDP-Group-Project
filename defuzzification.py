@@ -1,3 +1,19 @@
+#     Copyright 2024 Group 2 AI Course MIE212401 Final Project
+
+#     Licensed by Jules
+#     you may not use this file for public use except in compliance with the license.
+#     you may obtain a copy of the license at
+
+#     julianrafi@gmail.com
+
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+
+#     Author: Julian Rafi
+
 from fuzzification import output_sick_fuzzification
 
 output_sick = output_sick_fuzzification()
@@ -41,13 +57,13 @@ class defuzzification:
         result = ''
         if centerOfGravity < 1.78:
           result += 'Healthy, '
-        if 1.29 <= centerOfGravity <= 2.51:
+        if 1.29 <= centerOfGravity <= 2.53:
             result += 'Coronary Heart Disease, '
-        if 1.78 <= centerOfGravity < 3.25:
+        if 1.98 <= centerOfGravity < 3.21:
             result += 'Stroke, '
-        if 1.5 <= centerOfGravity <= 4.5:
+        if 1.71 <= centerOfGravity <= 2.5:
             result += 'Peripheral Arterial Disease, '
         if 3.25 <= centerOfGravity:
             result += 'Aortic Disease, '
-        # return str(result) + str(centerOfGravity)
-        return str(result) 
+        return str(result) + str(centerOfGravity)
+        # return str(result) 

@@ -1,3 +1,19 @@
+  /* Copyright 2024 Group 2 AI Course MIE212401 Final Project */
+
+  /* Licensed by Jules */
+  /* you may not use this file for public use except in compliance with the license. */
+  /* you may obtain a copy of the license at */
+
+  /* julianrafi@gmail.com */
+
+  /* Unless required by applicable law or agreed to in writing, software */
+  /* distributed under the License is distributed on an "AS IS" BASIS, */
+  /* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. */
+  /* See the License for the specific language governing permissions and */
+  /* limitations under the License. */
+
+  /* Author: Cindy Prilia (cindyprilia04@gmail.com) */
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
@@ -11,6 +27,7 @@
 .hidden{
     display: none;
 }
+
 a{
     text-decoration: none;
 }
@@ -55,7 +72,7 @@ nav{
     width: 0;
     bottom: 0;
     left: 0;
-    background-color: black;
+    background-color: #c2956b;
     transition: all 0.3s ease;
 }
 
@@ -63,7 +80,7 @@ nav{
     width: 70%;
 }
 
-.button {
+.testButton {
     background-color: #d6b598;
     border: 2px solid #d6b598;
 	border-radius: 50px;
@@ -72,9 +89,10 @@ nav{
 	height: 3rem; /* adjust as required */
 	cursor: pointer;
     font-family: 'Josefin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
 }
 
-.button:hover {
+.testButton:hover {
     background: hsl(28.064516129032267deg 43.05555555555557% 81.76470588235294%);
     border: 2px solid hsl(28.064516129032267deg 43.05555555555557% 81.76470588235294%);
 	border-radius: 50px;
@@ -82,7 +100,7 @@ nav{
 	transform: translateY(-1px)
 }
 
-.button:disabled {
+.testButton:disabled {
     background-color: hsl(28.064516129032267deg 15% 71.76470588235294%);
 	border-radius: 50px;
     color: white
@@ -124,6 +142,10 @@ header .content h2{
 header .content p{
     margin-bottom: 2rem;
     color: #b48d7a;
+}
+
+.about-text{
+    color: #c2956b;
 }
 
 @media (width < 300px){
