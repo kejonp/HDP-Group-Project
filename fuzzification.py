@@ -34,54 +34,6 @@ class chest_pain_fuzzification:
             asymptomatic=self.asymptomatic(cp)
         )
 
-# systolic only kata cindy
-# class blood_pressure_fuzzification:
-#     def __init__(self):
-#         pass
-
-#     def blood_pressure_low(self, x):
-#         if 0 <= x <= 111:
-#             return 1.0
-#         elif 111 < x <= 134:
-#             return (-1.0 / 23) * x + 134 / 23.0
-#         else:
-#             return 0.0
-
-#     def blood_pressure_medium(self, x):
-
-#         if 127 <= x <= 139:
-#             return (1.0 / 12) * x - 127 / 12.0
-#         elif 139 < x <= 153:
-#             return (-1.0 / 14) * x + 153 / 14.0
-#         else:
-#             return 0.0
-
-#     def blood_pressure_high(self, x):
-
-#         if 142 <= x <= 157:
-#             return (1.0 / 15) * x - 142 / 15.0
-#         elif 157 < x <= 172:
-#             return (-1.0 / 15) * x + 172 / 15.0
-#         else:
-#             return 0.0
-
-#     def blood_pressure_very_high(self, x):
-
-#         if 0 <= x <= 154:
-#             return 0.0
-#         elif 154 < x <= 171:
-#             return (1.0 / 17) * x - 154 / 17.0
-#         else:
-#             return 1.0
-
-#     def fuzzify_blood_pressure(self, bp):
-#         return dict(
-#             low=self.blood_pressure_low(bp),
-#             medium=self.blood_pressure_medium(bp),
-#             high=self.blood_pressure_high(bp),
-#             very_high=self.blood_pressure_very_high(bp)
-#         )
-
 ## Updated with diastolic value as y   
 class blood_pressure_fuzzification:
     def __init__(self):
@@ -194,43 +146,6 @@ class blood_sugar_fuzzification:
             false=1 - self.blood_sugar_veryhigh(bloodSugar)
         )
 
-
-class ECG_fuzzification:
-    def __init__(self):
-        pass
-
-    def ECG_normal(self, x):
-        if -0.5 <= x <= 0:
-            return 1.0
-        elif 0 < x <= 0.4:
-            return (-1.0 / 0.4) * x + 1.0
-        else:
-            return 0.0
-
-    def ECG_abnormal(self, x):
-        if 0.2 <= x <= 1:
-            return (1.0 / 0.8) * x - 0.2 / 0.8
-        elif 1 < x <= 1.8:
-            return (-1.0 / 0.8) * x + 1.8 / 0.8
-        else:
-            return 0.0
-
-    def ECG_hypertrophy(self, x):
-        if -0.5 <= x <= 1.4:
-            return 0.0
-        elif 1.4 < x <= 1.9:
-            return (1.0 / 0.5) * x - 1.4 / 0.5
-        else:
-            return 0
-
-    def fuzzify_ECG(self, ECG):
-        return dict(
-            normal=self.ECG_normal(ECG),
-            abnormal=self.ECG_abnormal(ECG),
-            hypertrophy=self.ECG_hypertrophy(ECG)
-        )
-
-
 class heart_rate_fuzzification:
     def __init__(self):
         pass
@@ -290,72 +205,6 @@ class exercise_fuzzification:
         return dict(
             true=self.true(ex),
             false=self.false(ex)
-        )
-
-
-class old_peak_fuzzification:
-    def __init__(self):
-        pass
-
-    def old_peak_low(self, x):
-        if 0 <= x <= 1:
-            return 1.0
-        elif 1 < x <= 2:
-            return (-1.0) * x + 2.0
-        else:
-            return 0.0
-
-    def old_peak_risk(self, x):
-        if 1.5 <= x <= 2.8:
-            return (1.0 / 1.3) * x - 1.5 / 1.3
-        elif 2.8 < x <= 4.2:
-            return (-1.0 / 1.4) * x + 4.2 / 1.4
-        else:
-            return 0.0
-
-    def old_peak_terrible(self, x):
-        if 0 <= x <= 2.5:
-            return 0.0
-        elif 2.5 < x <= 4:
-            return (1.0 / 1.5) * x - 2.5 / 1.5
-        else:
-            return 1.0
-
-    def fuzzify_old_peak(self, op):
-        return dict(
-            low=self.old_peak_low(op),
-            risk=self.old_peak_risk(op),
-            terrible=self.old_peak_terrible(op)
-        )
-
-
-class thallium_scan_fuzzification:
-    def __init__(self):
-        pass
-
-    def normal(self, x):
-        if x == 3:
-            return 1
-        else:
-            return 0
-
-    def medium(self, x):
-        if x == 6:
-            return 1
-        else:
-            return 0
-
-    def high(self, x):
-        if x == 7:
-            return 1
-        else:
-            return 0
-
-    def fuzzify_thallium(self, th):
-        return dict(
-            normal=self.normal(th),
-            medium=self.medium(th),
-            high=self.high(th)
         )
 
 

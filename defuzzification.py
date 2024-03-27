@@ -65,5 +65,4 @@ class defuzzification:
             result += 'Peripheral Arterial Disease, '
         if 3.25 <= centerOfGravity:
             result += 'Aortic Disease, '
-        return str(result) + str(centerOfGravity)
-        # return str(result) 
+        return str(result) 
