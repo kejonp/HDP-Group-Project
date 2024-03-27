@@ -72,6 +72,24 @@ button:hover{
   color: #fff;
 }
 
+.submit_button {
+  background-color: #ffff;
+  color: #c2956b;
+  font-weight: bold;
+  width: 150px;
+  border: 2px solid #c2956b;
+  padding: 10px;
+  margin: 20px 0 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit_button:hover{
+  background: #c2956b;
+  color: #fff;
+}
+
 .question-container{
   display: none;
 }
